@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #17484D;
+    justify-content: space-around;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items > li:hover{
+    cursor: pointer;
+    color: white;
+}
