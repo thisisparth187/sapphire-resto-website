@@ -18,20 +18,20 @@
 }
 
 .rooms {
-  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/roombg.png);
+  background-image: url(..\assets\images\roombg.png);
 }
 .rooms:hover {
-  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/roombg-darker.png);
+  background-image: url(../assets/images/roombg-darker.png);
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .table {
-  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/tablebg.png);
+  background-image: url(../assets/images/tablebg.png);
 }
 
 .table:hover {
-  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/tablebg-darker.png);
+  background-image: url(../assets/images/tablebg-darker.png);
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -41,4 +41,10 @@
   text-align: center;
   font-size: 5rem;
   font-weight: 500;
+}
+
+.table:active,
+.rooms:active{
+  transform: scale(1.0);
+  filter: brightness(50%);
 }
