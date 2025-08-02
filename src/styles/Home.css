@@ -42,3 +42,8 @@
   font-size: 5rem;
   font-weight: 500;
 }
+
+.table:active,
+.rooms:active{
+  transform: scale(1.0);
+}
