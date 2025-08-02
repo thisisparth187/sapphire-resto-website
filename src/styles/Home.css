@@ -46,4 +46,5 @@
 .table:active,
 .rooms:active{
   transform: scale(1.0);
+  filter: brightness(50%);
 }
