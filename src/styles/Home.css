@@ -1,0 +1,44 @@
+.cards-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.rooms,
+.table {
+  margin: 20px;
+  background-size: cover;
+  border-radius: 30px;
+  width: 45%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.rooms {
+  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/roombg.png);
+}
+.rooms:hover {
+  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/roombg-darker.png);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.table {
+  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/tablebg.png);
+}
+
+.table:hover {
+  background-image: url(D:/Internship/sapphire-resto-website/src/assets/images/tablebg-darker.png);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 500;
+}
