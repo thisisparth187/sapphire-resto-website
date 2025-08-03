@@ -1,50 +1,30 @@
-.cards-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
+.hero {}
 
-.rooms,
-.table {
-  margin: 20px;
-  background-size: cover;
-  border-radius: 30px;
-  width: 45%;
-  height: 80vh;
+.hero-img {
+  height: 100vh;
+  background-image: url(../assets/images/roombg.png);
+  background-size: 100vw;
+  background-position: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.rooms {
-  background-image: url(..\assets\images\roombg.png);
-}
-.rooms:hover {
-  background-image: url(../assets/images/roombg-darker.png);
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.table {
-  background-image: url(../assets/images/tablebg.png);
-}
-
-.table:hover {
-  background-image: url(../assets/images/tablebg-darker.png);
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.text {
-  color: white;
+.hero-img>h1 {
   text-align: center;
-  font-size: 5rem;
-  font-weight: 500;
+  font-size: 4rem;
+  color: #EEEEEE;
+  line-height: 4rem;
+  text-shadow: 0px 0px 3px #EEEEEE;
 }
 
-.table:active,
-.rooms:active{
-  transform: scale(1.0);
-  filter: brightness(50%);
+.hero-img>p {
+  color: #EEEEEE;
+  text-shadow: 0px 0px 3px #EEEEEE;
+}
+
+.other {
+  height: 100vh;
 }

@@ -1,6 +1,15 @@
 .navbar{
-    background-color: #17484D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 57, 48, 0);
     justify-content: space-around;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.navbar.scrolled{
+    background-color: rgba(44, 57, 48, 1);
 }
 
 .nav-items{

@@ -1,12 +1,40 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom';
 import '../styles/navbar.css'
 import logo from '../assets/images/logo-only-nobg.png'
 const Navbar = () => {
+    const [opacity, setOpacity] = useState(0);
+    const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (location.pathname === "/") {
+                const scrollTop = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight - windowHeight;
+
+                const scrollPercent = (scrollTop / docHeight) * 100;
+
+                // Smooth opacity based on position
+                if (scrollPercent < 10) {
+                    setOpacity(0); // Transparent
+                }else {
+                    setOpacity(1); // Fully solid
+                }
+            } else {
+                setOpacity(1); // Other pages: always solid
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // run once initially
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [location.pathname]);
     const linkClass = ({ isActive }) =>
         `duration-200 ${isActive ? 'text-[#C29D69]' : 'hover:text-[#A27B5C]'}`;
+
     return (
-        <div className='navbar flex'>
+        <div className="navbar flex" style={{ backgroundColor: `rgba(23, 72, 77, ${opacity})` }}>
             <div className="logo w-20 text-2xl text-white font-bold">
                 <NavLink to="/" className="flex content-center items-center">
                     <img src={logo} alt="logo" className='p-4' />
@@ -28,9 +56,9 @@ const Navbar = () => {
 
                     {/* Dropdown */}
                     <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2">FIND ROOMS</li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2">ROOMS & SUITES</li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2">ROOM DETAILS</li>
+                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">FIND ROOMS</li>
+                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOMS & SUITES</li>
+                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOM DETAILS</li>
                     </ul>
                 </li>
                 <li>
