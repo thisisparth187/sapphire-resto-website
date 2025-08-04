@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import bgImage from '../assets/images/roombg.png'
 import {
   FaWifi,
   FaSwimmingPool,
@@ -25,7 +26,7 @@ const About = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         style={{
-          backgroundImage: "url('/images/download.jpeg')",
+          backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "150px 0",
@@ -35,11 +36,10 @@ const About = () => {
       >
         <div
           style={{
-            backgroundColor: "rgba(0,0,0,0.5)",
             padding: "80px 20px",
-            borderRadius: "10px",
             display: "inline-block",
           }}
+
         >
           <motion.h1
             initial={{ scale: 0.8 }}
