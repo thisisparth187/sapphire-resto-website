@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bgImage from '../assets/images/roombg.png'
+import tableBg from '../assets/images/tablebg.png'
 import {
   FaWifi,
   FaSwimmingPool,
@@ -64,7 +65,7 @@ const About = () => {
           style={{ flex: "1 1 50%", paddingRight: "20px" }}
         >
           <img
-            src="C:\Users\Pradnya\Downloads\download.jpeg"
+            src={tableBg}
             alt="Luxury Room"
             style={{ width: "100%", borderRadius: "12px" }}
           />
