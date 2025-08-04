@@ -1,0 +1,129 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card {
+  animation: fadeInUp 1s ease-out both;
+}
+.animate-message {
+  animation: fadeInUp 1.2s ease-out both;
+}
+.animate-form {
+  animation: fadeInUp 1.4s ease-out both;
+}
+.input1 {
+  animation: fadeInUp 1.6s ease-out both;
+}
+.input2 {
+  animation: fadeInUp 1.8s ease-out both;
+}
+.input3 {
+  animation: fadeInUp 2s ease-out both;
+}
+.input4 {
+  animation: fadeInUp 2.2s ease-out both;
+}
+
+.card {
+  margin: 10rem;
+  display: flex;
+  padding: 1rem;
+  background-color: #16484c;
+  background-image: url("../assets/images/contactbg.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.5);
+  margin-bottom: auto;
+}
+.message {
+  margin: auto;
+  text-align: center;
+  padding: 2rem;
+  margin-right: 5rem;
+  font-size: 30px;
+}
+.message1 {
+  font-size: 50px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-left: auto;
+  align-items: flex-end;
+  background-color: #16484cac;
+  border-radius: 20px;
+}
+.inputbox {
+  color: #c29d69;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgba(18, 56, 59, 0.473);
+  border-radius: 20px;
+  padding: 20px;
+  width: 30rem;
+  height: 5rem;
+  margin: 5px;
+}
+.textarea {
+  font-size: 20px;
+  height: 10rem;
+}
+.textarea::placeholder {
+  font-size: 30px;
+}
+.icons {
+  height: 50px;
+  display: inline-block;
+  margin-left: 5rem;
+}
+.socials {
+  margin-top: 7rem;
+  padding: 5rem;
+  background-color: #16484c;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: flex-end;
+  font-family: "Times New Roman", Times, serif;
+}
+.submit-btn {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(166, 124, 91);
+  border-radius: 20px;
+  padding: 20px;
+  width: 30rem;
+  height: 5rem;
+  margin: 5px;
+}
+/* For Chrome, Brave, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important; /* Force transparency */
+  box-shadow: none;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a67c5b;
+  /* border-radius: 10px; */
+  border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c29d69;
+}
