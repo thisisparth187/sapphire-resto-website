@@ -4,7 +4,7 @@ import "../styles/Contact.css";
 const Contact = () => {
   return (
     <div div className="scroll-container">
-      <div className="card animate-card">
+      <div className="feedback animate-feedback">
         <div className="message animate-message">
           <h1 className="message1">Want to get in touch?</h1>
           Email us right away!
