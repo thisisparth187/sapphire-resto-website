@@ -1,11 +1,11 @@
 import React from 'react'
 
-const FindRoom = () => {
+const RoomDetails = () => {
   return (
     <div>
-      FindRoom
+      
     </div>
   )
 }
 
-export default FindRoom
+export default RoomDetails

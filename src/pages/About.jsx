@@ -35,7 +35,7 @@ const About = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         style={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: url(${bgImage}),
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "150px 0",
@@ -199,11 +199,14 @@ const About = () => {
         initial="hidden"
         whileInView="visible"
         style={{ textAlign: "center", padding: "60px 5%" }}
+        className="flex flex-col gap-4"
       >
-        <h4 style={{ color: "#c29d69", letterSpacing: "2px" }}>OUR TEAM</h4>
+        <div className="">
+          <h4 style={{ color: "#c29d69", letterSpacing: "2px" }}>OUR TEAM</h4>
         <h2 style={{ fontSize: "2rem", margin: "10px 0" }}>
           MEET THE EXPERT MEMBERS
         </h2>
+        </div>
         <div
           style={{
             display: "grid",
