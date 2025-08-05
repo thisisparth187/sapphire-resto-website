@@ -68,6 +68,7 @@ const About = () => {
             src={tableBg}
             alt="Luxury Room"
             style={{ width: "100%", borderRadius: "12px" }}
+            className=" shadow-xl"
           />
         </motion.div>
         <motion.div
@@ -123,17 +124,21 @@ const About = () => {
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
-        style={{ padding: "60px 5%", textAlign: "center" }}
+        style={{
+          padding: "60px 5%", textAlign: "center",
+          background: "#1E1E1E"
+        }}
       >
         <h4 style={{ color: "#c29d69", letterSpacing: "5px" }}>FACILITIES</h4>
-        <h2 style={{ fontSize: "2rem", marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "40px", color: "#EEEEEE" }}>
           Amenities Available at Sapphire
         </h2>
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "20px",
+            gap: "5rem",
+            padding: "2rem"
           }}
         >
           {[
@@ -151,10 +156,11 @@ const About = () => {
               style={{
                 background: "#f5f5f5",
                 padding: "20px",
-                borderRadius: "8px",
+                borderRadius: "8px"
               }}
+              className="flex flex-col items-center "
             >
-              {facility.icon}
+              <div className="">{facility.icon}</div>
               <h3 style={{ color: "#a27b5c", marginTop: "10px" }}>
                 {facility.name}
               </h3>
@@ -178,8 +184,9 @@ const About = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "20px",
+            gap: "2rem",
           }}
+          className="p-4"
         >
           {[
             { name: "John Smith", role: "General Manager", img: "https://randomuser.me/api/portraits/men/75.jpg" },
@@ -187,14 +194,15 @@ const About = () => {
             { name: "Michael Lee", role: "Hospitality Manager", img: "https://randomuser.me/api/portraits/men/32.jpg" },
             { name: "Sophia Davis", role: "Guest Relations", img: "https://randomuser.me/api/portraits/women/44.jpg" },
           ].map((member, idx) => (
-            <motion.div key={idx}>
+            <motion.div key={idx} className="flex flex-col gap-2 border-1 rounded-md p-4 shadow-md">
               <img
                 src={member.img}
                 alt={member.name}
                 style={{ width: "100%", borderRadius: "8px" }}
+                className="shadow-md"
               />
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+              <h3 className="text-2xl font-bold">{member.name}</h3>
+              <p className="text-sm font-light text-gray-500">{member.role}</p>
             </motion.div>
           ))}
         </div>
@@ -271,7 +279,7 @@ const About = () => {
           textAlign: "center",
         }}
       >
-        {[
+        {/* {[
           { label: "Luxury Rooms", value: "250 +" },
           { label: "Customer Rating", value: "4.9" },
           { label: "Happy Customers", value: "12k +" },
@@ -282,7 +290,9 @@ const About = () => {
             </h1>
             <p>{stat.label}</p>
           </motion.div>
-        ))}
+        ))} */}
+
+
       </motion.section>
     </div>
   );

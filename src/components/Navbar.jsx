@@ -18,7 +18,7 @@ const Navbar = () => {
                 // Smooth opacity based on position
                 if (scrollPercent < 10) {
                     setOpacity(0); // Transparent
-                }else {
+                } else {
                     setOpacity(1); // Fully solid
                 }
             } else {
@@ -34,7 +34,7 @@ const Navbar = () => {
         `duration-200 ${isActive ? 'text-[#C29D69]' : 'hover:text-[#A27B5C]'}`;
 
     return (
-        <div className="navbar flex" style={{ backgroundColor: `rgba(23, 72, 77, ${opacity})` }}>
+        <div className="navbar flex" style={{ backgroundColor: `rgba(38, 38, 38,${opacity})` }}>
             <div className="logo w-20 text-2xl text-white font-bold">
                 <NavLink to="/" className="flex content-center items-center">
                     <img src={logo} alt="logo" className='p-4' />
@@ -56,9 +56,15 @@ const Navbar = () => {
 
                     {/* Dropdown */}
                     <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">FIND ROOMS</li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOMS & SUITES</li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOM DETAILS</li>
+                        <NavLink to="/findroom">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">FIND ROOMS</li>
+                        </NavLink>
+                        <NavLink to="/roomssuits">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOMS & SUITES</li>
+                        </NavLink>
+                        <NavLink to="/roomdetails">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOM DETAILS</li>
+                        </NavLink>
                     </ul>
                 </li>
                 <li>
