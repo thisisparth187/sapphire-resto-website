@@ -51,7 +51,7 @@ const Navbar = () => {
                 </li>
                 <li className="relative group">
                     <button className="hover:text-[#C29D69] duration-200 cursor-pointer">
-                        ROOMS ▾
+                        Rooms ▾
                     </button>
 
                     {/* Dropdown */}

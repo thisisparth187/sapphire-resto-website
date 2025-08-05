@@ -81,21 +81,6 @@
 .textarea::placeholder {
   font-size: 30px;
 }
-.icons {
-  height: 50px;
-  display: inline-block;
-  margin-left: 5rem;
-}
-.socials {
-  margin-top: 7rem;
-  padding: 5rem;
-  background-color: #16484c;
-  color: white;
-  font-size: 30px;
-  display: flex;
-  align-items: flex-end;
-  font-family: "Times New Roman", Times, serif;
-}
 .submit-btn {
   color: white;
   font-size: 30px;
@@ -109,20 +94,7 @@
 }
 /* For Chrome, Brave, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent !important; /* Force transparency */
-  box-shadow: none;
-  border: none;
-}
-
-::-webkit-scrollbar-thumb {
-  /* border-radius: 10px; */
-  border: 3px solid transparent;
-}
-
-::-webkit-scrollbar-thumb:hover {
   display: none;
 }
+
+
