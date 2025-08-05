@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Agatho Regular';
+  src: url('./assets/fonts/agatho/Agatho_Regular.otf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Agatho Bold';
+  src: url('./assets/fonts/agatho/Agatho_Bold.otf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Agatho Medium';
+  src: url('./assets/fonts/agatho/Agatho_Medium.otf') format('truetype')
+}
+
+:root {
+
+  font-family: 'Agatho Regular', sans-serif;
+  letter-spacing: 0.1rem;
+}
+
 body {
   background-color: #EEEEEE;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
