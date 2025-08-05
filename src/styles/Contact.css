@@ -3,6 +3,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -12,21 +13,27 @@
 .animate-feedback {
   animation: fadeInUp 1s ease-out both;
 }
+
 .animate-message {
   animation: fadeInUp 1.2s ease-out both;
 }
+
 .animate-form {
   animation: fadeInUp 1.4s ease-out both;
 }
+
 .input1 {
   animation: fadeInUp 1.6s ease-out both;
 }
+
 .input2 {
   animation: fadeInUp 1.8s ease-out both;
 }
+
 .input3 {
   animation: fadeInUp 2s ease-out both;
 }
+
 .input4 {
   animation: fadeInUp 2.2s ease-out both;
 }
@@ -36,65 +43,93 @@
   display: flex;
   padding: 1rem;
   background-color: #16484c;
-  background-image: url("../assets/images/contactbg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/contactbg.png");
   background-size: cover;
   background-position: center;
   color: white;
   border-radius: 20px;
-  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.5);
   margin-bottom: auto;
 }
+
+
 .message {
   margin: auto;
   text-align: center;
   padding: 2rem;
   margin-right: 5rem;
-  font-size: 30px;
 }
+
 .message1 {
-  font-size: 50px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  /* min, preferred (viewport-based), max */
+  font-weight: bold;
 }
+
+.message2 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
 .form {
   display: flex;
   flex-direction: column;
   padding: 2rem;
   margin-left: auto;
-  align-items: flex-end;
+  align-items: center;
   background-color: #000000ac;
   border-radius: 20px;
 }
+
 .inputbox {
   color: #ffffff;
-  font-size: 30px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+
   text-align: center;
   background-color: rgba(0, 0, 0, 0.473);
   border-radius: 20px;
-  padding: 20px;
+  padding: 1rem;
   width: 30rem;
   height: 5rem;
   margin: 5px;
 }
+
 .textarea {
   font-size: 20px;
+
   height: 10rem;
 }
+
 .textarea::placeholder {
-  font-size: 30px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+
 }
+
 .submit-btn {
   color: white;
-  font-size: 30px;
+  font-size: 1.2rem;
   text-align: center;
   background-color: rgb(166, 124, 91);
-  border-radius: 20px;
-  padding: 20px;
-  width: 30rem;
-  height: 5rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem;
+  width: 12rem;
+  height: 3rem;
   margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.submit-btn:hover {
+  background-color: rgb(145, 105, 75);
+  transform: scale(1.05);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+
 /* For Chrome, Brave, Edge, Safari */
 ::-webkit-scrollbar {
   display: none;
 }
-
-

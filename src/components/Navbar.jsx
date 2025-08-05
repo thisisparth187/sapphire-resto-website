@@ -8,7 +8,6 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (location.pathname === "/") {
                 const scrollTop = window.scrollY;
                 const windowHeight = window.innerHeight;
                 const docHeight = document.documentElement.scrollHeight - windowHeight;
@@ -21,9 +20,6 @@ const Navbar = () => {
                 } else {
                     setOpacity(1); // Fully solid
                 }
-            } else {
-                setOpacity(1); // Other pages: always solid
-            }
         };
 
         window.addEventListener("scroll", handleScroll);
