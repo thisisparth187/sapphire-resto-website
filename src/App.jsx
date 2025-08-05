@@ -7,22 +7,23 @@ import Navbar from './components/Navbar'
 import FindRoom from './pages/FindRoom'
 import RoomsSuits from './pages/RoomsSuits'
 import RoomDetails from './pages/RoomDetails'
-
+import Footer from './components/Footer'
 const App = () => {
   return (
     <Router>
       <div>
-        <Navbar/>
+        <Navbar />
         <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/findroom" element={<FindRoom />} />
-          <Route path="/roomssuits" element={<RoomsSuits />} />
-          <Route path="/roomdetails" element={<RoomDetails />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/findroom" element={<FindRoom />} />
+            <Route path="/roomssuits" element={<RoomsSuits />} />
+            <Route path="/roomdetails" element={<RoomDetails />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   )

@@ -1,7 +1,6 @@
 import React from 'react'
 import "../styles/Home.css";
 import Card from '../components/Card';
-import Footer from '../components/Footer';
 import { motion } from "framer-motion";
 const Home = () => {
   return (
@@ -27,7 +26,6 @@ const Home = () => {
           <Card />
         </motion.div>
       </div>
-      <Footer />
     </div>
   )
 }
