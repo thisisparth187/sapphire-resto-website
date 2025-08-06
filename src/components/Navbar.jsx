@@ -8,18 +8,18 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-                const scrollTop = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const docHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight - windowHeight;
 
-                const scrollPercent = (scrollTop / docHeight) * 100;
+            const scrollPercent = (scrollTop / docHeight) * 100;
 
-                // Smooth opacity based on position
-                if (scrollPercent < 10) {
-                    setOpacity(0); // Transparent
-                } else {
-                    setOpacity(1); // Fully solid
-                }
+            // Smooth opacity based on position
+            if (scrollPercent < 10) {
+                setOpacity(0); // Transparent
+            } else {
+                setOpacity(1); // Fully solid
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -27,7 +27,8 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [location.pathname]);
     const linkClass = ({ isActive }) =>
-        `duration-200 ${isActive ? 'text-[#C29D69]' : 'hover:text-[#A27B5C]'}`;
+        `duration-200 relative ${isActive ? 'active-link text-[#C29D69]' : 'hover:text-[#A27B5C]'}`;
+
 
     return (
         <div className="navbar flex" style={{ backgroundColor: `rgba(38, 38, 38,${opacity})` }}>
@@ -53,13 +54,31 @@ const Navbar = () => {
                     {/* Dropdown */}
                     <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <NavLink to="/findroom">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">FIND ROOMS</li>
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Find Rooms</li>
                         </NavLink>
                         <NavLink to="/roomssuits">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOMS & SUITES</li>
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Rooms & Suites</li>
                         </NavLink>
                         <NavLink to="/roomdetails">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">ROOM DETAILS</li>
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Room Details</li>
+                        </NavLink>
+                    </ul>
+                </li>
+                <li className="relative group">
+                    <button className="hover:text-[#C29D69] duration-200 cursor-pointer">
+                        Dine ▾
+                    </button>
+
+                    {/* Dropdown */}
+                    <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <NavLink to="/starters">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Starters</li>
+                        </NavLink>
+                        <NavLink to="/lunch">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Lunch</li>
+                        </NavLink>
+                        <NavLink to="/dinner">
+                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Dinner</li>
                         </NavLink>
                     </ul>
                 </li>

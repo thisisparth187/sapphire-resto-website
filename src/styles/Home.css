@@ -15,7 +15,6 @@
   font-size: 4rem;
   color: #eeeeee;
   line-height: 4rem;
-  text-shadow: 0px 0px 3px #eeeeee;
 }
 
 .other {
@@ -24,8 +23,8 @@
 
 .hero-img > p {
   color: #eeeeee;
-  text-shadow: 0px 0px 3px #eeeeee;
 }
+
 
 .other {
   height: 100vh;

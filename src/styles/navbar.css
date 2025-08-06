@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,17 +9,57 @@
     z-index: 100;
 }
 
-.navbar.scrolled{
+.navbar.scrolled {
     background-color: rgba(44, 57, 48, 1);
 }
 
-.nav-items{
+.nav-items {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nav-items > li:hover{
+.nav-items>li:hover {
     cursor: pointer;
     color: white;
+}
+
+/* Navlink Hover animation */
+
+.nav-items >li {
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-items >li::before,
+.nav-items >li::after {
+    content: "";
+    position: absolute;
+    background-color: #A6A6A6;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-items >li::before {
+    left: 0;
+}
+
+.nav-items >li::after {
+    right: 0;
+}
+
+/* Hover effect */
+.nav-items >li:hover::before,
+.nav-items >li:hover::after {
+    width: 110%;
+}
+
+/* Keep underline for active link */
+.active-link::before,
+.active-link::after {
+    width: 100%;
+    background-color: #C29D69;
+    /* Match your active color */
 }

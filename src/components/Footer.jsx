@@ -30,11 +30,11 @@ const Footer = () => {
           <h2 style={{ color: '#fff', fontSize: '24px' }}>
             SAPPHIRE{' '}
           </h2>
-          
-            <small style={{ fontSize: '14px', color: '#d2aa6d' }}>
-              LUXURY HOTEL
-            </small>
-            <br />
+
+          <small style={{ fontSize: '14px', color: '#d2aa6d' }}>
+            LUXURY HOTEL
+          </small>
+          <br />
           <h3
             style={{
               marginTop: '20px',
@@ -135,21 +135,21 @@ const Footer = () => {
               gap: '5px',
               marginTop: '10px',
             }}
-            
+
           >
             {[Room1, Room2, Room3, Room4, Room5, Room6].map((img, index) => (
-               <img
-                    key={index}
-                    src={img}
-                    alt={`gallery${index + 1}`}
-                    style={{
-                      width: '100%',
-                      height: '90px',
-                      objectFit: 'cover',
-                    }}
-                    
-                  />
-                ))}
+              <img
+                key={index}
+                src={img}
+                alt={`gallery${index + 1}`}
+                style={{
+                  width: '100%',
+                  height: '90px',
+                  objectFit: 'cover',
+                }}
+
+              />
+            ))}
           </div>
         </div>
 
@@ -165,26 +165,15 @@ const Footer = () => {
             Newsletter
           </h3>
           <p style={{ marginTop: '10px' }}>Subscribe our Newsletter</p>
-          <input
+          <div className="textInputWrapper">
+            <input
             type="email"
-            placeholder="Enter Your Email..."
-            style={{
-              padding: '10px',
-              width: '100%',
-              margin: '10px 0',
-              border: 'none',
-              fontFamily: 'inherit',
-            }}
+            placeholder="Enter your email"
+            className='textInput'
           />
+          </div>
           <button
-            style={{
-              backgroundColor: '#d2aa6d',
-              border: 'none',
-              padding: '10px 20px',
-              color: '#000',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-            }}
+            className='btn'
           >
             Subscribe
           </button>

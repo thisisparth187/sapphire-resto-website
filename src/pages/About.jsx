@@ -2,13 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import bgImage from '../assets/images/roombg.png';
 import tableBg from '../assets/images/tablebg.png';
-
+import { PiGreaterThanBold } from "react-icons/pi";
 
 import imgGeneralManager from "../assets/images/team-images/general-manager.jpg";
 import imgHeadChef from "../assets/images/team-images/Executive Chef.jpg";
 import imgHospitalityManager from "../assets/images/team-images/Hospitality Manager.jpeg";
 import imgGuestRelations from "../assets/images/team-images/Guest Relations Manager.jpg";
 
+import MemberCard from "../components/MemberCard.jsx";
 
 import {
   FaWifi,
@@ -31,9 +32,6 @@ const About = () => {
     <div>
       {/* 1. About Us Hero Section */}
       <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -46,20 +44,24 @@ const About = () => {
         <div
           style={{
             padding: "80px 20px",
-            display: "inline-block",
+            display: "flex",
           }}
+          className="flex-col content-center items-center"
         >
           <motion.h1
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             style={{ fontSize: "3rem", fontWeight: "bold" }}
           >
             About Us
           </motion.h1>
-          <p style={{ fontSize: "1.1rem" }}>
-            <span style={{ color: "#c29d69" }}>Home</span> › About Us
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
+            <span style={{ color: "#c29d69" }}>Home</span> <PiGreaterThanBold fontSize={"0.75rem"} /> About Us
+          </motion.p>
         </div>
       </motion.section>
 
@@ -110,22 +112,7 @@ const About = () => {
           </div>
           <motion.a
             href="/contact"
-            style={{
-              backgroundColor: "#a27b5c",
-              color: "#fff",
-              padding: "12px 30px",
-              display: "inline-block",
-              marginTop: "20px",
-              borderRadius: "6px",
-              textDecoration: "none",
-              fontWeight: "bold",
-              boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
-            }}
-            whileHover={{
-              boxShadow: "0px 6px 15px rgba(0,0,0,0.35)",
-              scale: 1.05,
-            }}
-            whileTap={{ scale: 0.95 }}
+            className="btn"
             transition={{ type: "spring", stiffness: 300 }}
           >
             CONTACT NOW
@@ -203,51 +190,31 @@ const About = () => {
         initial="hidden"
         whileInView="visible"
         style={{ textAlign: "center", padding: "60px 5%" }}
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-8"
       >
-        <div className="">
+        <div>
           <h4 style={{ color: "#c29d69", letterSpacing: "2px" }}>OUR TEAM</h4>
           <h2 style={{ fontSize: "2rem", margin: "10px 0" }}>
             MEET THE EXPERT MEMBERS
           </h2>
         </div>
+
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "20px",
-          }}
+          className="flex gap-4 justify-center"
         >
           {[
-            { name: "Sophia Turner", role: "General Manager", img: imgGeneralManager },
-            { name: " Richard Williams", role: "Head Chef", img: imgHeadChef },
-            { name: "Michael Lee", role: "Hospitality Manager", img: imgHospitalityManager },
-            { name: "Daniel Mitchell", role: "Guest Relations", img: imgGuestRelations },
+            { name: "Sophia Turner", designation: "General Manager", image: imgGeneralManager, desc: "Ensures flawless operations and a luxurious guest experience with expert leadership." },
+            { name: "Richard Williams", designation: "Head Chef", image: imgHeadChef, desc: "Crafts exceptional dishes blending global flavors with local freshness." },
+            { name: "Michael Lee", designation: "Hospitality Manager", image: imgHospitalityManager, desc: "Delivers seamless service and comfort with a warm, guest-first approach." },
+            { name: "Daniel Mitchell", designation: "Guest Relations", image: imgGuestRelations, desc: "Provides personalized assistance and a welcoming experience from arrival to departure." },
           ].map((member, idx) => (
-            <motion.div
+            <MemberCard
               key={idx}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
-              <img
-                src={member.img}
-                alt={member.name}
-                style={{ width: "100%", borderRadius: "8px" }}
-              />
-              <h3
-                style={{
-                  fontSize: "1.4rem",
-                  fontWeight: "bold",
-                  marginTop: "10px",
-                  color: "#333",
-                }}
-              >
-                {member.name}
-              </h3>
-              <p style={{ fontSize: "0.9rem", color: "#777", marginTop: "4px" }}>
-                {member.role}
-              </p>
-            </motion.div>
+              name={member.name}
+              image={member.image}
+              designation={member.designation}
+              about={member.desc}
+            />
           ))}
         </div>
       </motion.section>

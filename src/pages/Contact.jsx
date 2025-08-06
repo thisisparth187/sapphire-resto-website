@@ -2,15 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/Contact.css";
 import bgImage from '../assets/images/roombg.png';
-
+import { PiGreaterThanBold } from "react-icons/pi";
 const Contact = () => {
   return (
     <div>
       
     <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -23,24 +20,31 @@ const Contact = () => {
         <div
           style={{
             padding: "80px 20px",
-            display: "inline-block",
+            display: "flex",
           }}
+          className="flex-col content-center items-center"
         >
           <motion.h1
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             style={{ fontSize: "3rem", fontWeight: "bold" }}
           >
-            About Us
+            Contact
           </motion.h1>
-          <p style={{ fontSize: "1.1rem" }}>
-            <span style={{ color: "#c29d69" }}>Home</span> › About Us
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
+            <span style={{ color: "#c29d69" }}>Home</span> <PiGreaterThanBold fontSize={"0.75rem"}/> Contact
+          </motion.p>
         </div>
       </motion.section>
       
-     <div className="contact-section mx-[10rem] my-[5rem]">
+     <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} className="contact-section mx-[10rem] my-[5rem]">
       {/* Left Info Section */}
       <div className="contact-info">
         <h4 className="contact-subtitle">CONTACT US</h4>
@@ -91,10 +95,10 @@ const Contact = () => {
             <option>Feedback</option>
           </select>
           <textarea placeholder="Message" className="form-input textarea"></textarea>
-          <button type="submit" className="submit-btn">SEND MESSAGE</button>
+          <button type="submit" className="btn">SEND MESSAGE</button>
         </form>
       </div>
-    </div>
+    </motion.div>
     </div>
   );
 };
