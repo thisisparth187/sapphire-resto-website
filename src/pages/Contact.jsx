@@ -86,15 +86,21 @@ const Contact = () => {
       <div className="contact-form">
         <h2>GET IN TOUCH</h2>
         <form>
-          <input type="text" placeholder="Your Name" className="form-input" />
-          <input type="email" placeholder="Your Email" className="form-input" />
+          <div className="textInputWrapper">
+            <input type="text" placeholder="Your Name" className="textInput" />
+          </div>
+          <div className="textInputWrapper">
+            <input type="email" placeholder="Your Email" className="textInput" />
+          </div>
           <select className="form-input">
             <option>Select Services</option>
             <option>Booking Inquiry</option>
             <option>General Support</option>
             <option>Feedback</option>
           </select>
-          <textarea placeholder="Message" className="form-input textarea"></textarea>
+          <div className="textInputWrapper">
+            <textarea placeholder="Message" className="textInput textarea"></textarea>
+          </div>
           <button type="submit" className="btn">SEND MESSAGE</button>
         </form>
       </div>
