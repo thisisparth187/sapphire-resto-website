@@ -11,6 +11,9 @@ import imgGuestRelations from "../assets/images/team-images/Guest Relations Mana
 
 import MemberCard from "../components/MemberCard.jsx";
 
+import { GoPlus } from "react-icons/go";
+import { LuSlash } from "react-icons/lu";
+
 import {
   FaWifi,
   FaSwimmingPool,
@@ -88,27 +91,29 @@ const About = () => {
           <h4 style={{ color: "#c29d69", letterSpacing: "2px" }}>
             LUXURY HOTEL AND RESORT
           </h4>
+
           <h2 style={{ fontSize: "2rem", margin: "10px 0" }}>
             LUXURY BEST HOTEL IN CITY CALIFORNIA, USA
           </h2>
+          
           <p style={{ color: "#555", lineHeight: "1.8" }}>
             Welcome to Sapphire Resto & Suites – the perfect blend of comfort,
-            luxury, and fine dining.
-          </p>
-          <p style={{ color: "#555", lineHeight: "1.8" }}>
-            Whether you're here for a romantic escape or a family vacation, we
+            luxury, and fine dining.Whether you're here for a romantic escape or a family vacation, we
             ensure a stay filled with memorable moments.
           </p>
+            
           <div
             style={{
               background: "#eeeeee",
-              padding: "15px 20px",
-              marginTop: "20px",
+              padding: "2rem 1rem",
               borderRadius: "8px",
               fontStyle: "italic",
+              display:"flex"
+
             }}
+            className="items-center"
           >
-            102/B, Dream Street, New Elephant Road, Resort
+            102<LuSlash/>B, Dream Street, New Elephant Road, Resort
           </div>
           <motion.a
             href="/contact"
@@ -293,39 +298,73 @@ const About = () => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          padding: "60px 5%",
+          padding: "8rem 5%",
           background: "#fff",
           textAlign: "center",
           flexWrap: "wrap",
           gap: "20px",
         }}
       >
-        {[
-          { label: "Luxury Rooms", value: "250 +" },
+          {/* { label: "Luxury Rooms", value: "250 " },
           { label: "Customer Rating", value: "4.9" },
-          { label: "Happy Customers", value: "12k +" },
-        ].map((stat, idx) => (
+          { label: "Happy Customers", value: "12k +" }, */}
+
           <motion.div
-            key={idx}
             whileHover={{
               y: -10,
               scale: 1.05,
-              boxShadow: "0px 8px 20px rgba(0,0,0,0.2)",
             }}
             transition={{ type: "spring", stiffness: 300 }}
             style={{
               background: "#f8f8f8",
-              padding: "20px 40px",
+              padding: "2rem 4rem",
               borderRadius: "8px",
               cursor: "pointer",
             }}
           >
-            <h1 style={{ color: "#a27b5c", fontSize: "2.5rem" }}>
-              {stat.value}
+            <h1 style={{ color: "#a27b5c", fontSize: "1.5rem" }}>
+              Luxury Rooms
             </h1>
-            <p>{stat.label}</p>
+            <p className="flex items-center justify-center text-2xl text-gray-500">250 <GoPlus /></p>
           </motion.div>
-        ))}
+
+          <motion.div
+            whileHover={{
+              y: -10,
+              scale: 1.05,
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            style={{
+              background: "#f8f8f8",
+              padding: "2rem 4rem",
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
+          >
+            <h1 style={{ color: "#a27b5c", fontSize: "1.5rem" }}>
+              Customer Rating
+            </h1>
+            <p className="flex items-center justify-center text-2xl text-gray-500">4.9</p>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              y: -10,
+              scale: 1.05,
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            style={{
+              background: "#f8f8f8",
+              padding: "2rem 4rem",
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
+          >
+            <h1 style={{ color: "#a27b5c", fontSize: "1.5rem" }}>
+              Happy Customers
+            </h1>
+            <p className="flex items-center justify-center text-2xl text-gray-500">12k <GoPlus /></p>
+          </motion.div>
+
       </motion.section>
 
 
