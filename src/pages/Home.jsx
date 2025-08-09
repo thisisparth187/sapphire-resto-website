@@ -4,6 +4,7 @@ import HotelShowcase from '../components/HotelShowcase';
 import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import image from "../assets/images/home-page/image.jpg"
+import Facilities from './../components/Facilities.jsx';
 const Home = () => {
   return (
 
@@ -51,7 +52,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
           className='bg-white'>
-          <HotelShowcase 
+          <HotelShowcase
             subtitle={"LUXURY HOTEL AND RESORT"}
             heading={"LUXURY BEST HOTEL IN CITY CALIFORNTA, USA"}
             description={"Rapidiously myocardinate cross-platform intellectual capital after marketing model. Appropriately create interactive infrastructures after maintainable are Holisticly facilitate stand-alone inframe. \nRapidiously myocardinate cross-platform intellectual capital after marketing model. Appropriately create interactive infrastructures after"}
@@ -59,6 +60,10 @@ const Home = () => {
             badge={"Award Winning Hotel"}
             image={image}
           />
+        </div>
+
+        <div>
+          <Facilities />
         </div>
       </div>
     </div>

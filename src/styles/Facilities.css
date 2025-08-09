@@ -1,0 +1,155 @@
+.facilities-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 1rem;
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+.facilities-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.facilities-subtitle {
+  color: #c4a06f;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.facilities-title {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-left: 1rem;
+}
+
+
+.facility-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.facility-card.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+.facility-image img {
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.facility-content {
+  flex: 1;
+}
+
+.facility-id {
+  color: #c4a06f;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.facility-category {
+  color: #c4a06f;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.facility-title {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.facility-description {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.facility-link {
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.facility-link:hover {
+  color: #c4a06f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .facilities-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .facility-card,
+  .facility-card.reverse-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .facility-image img {
+    width: 100%;
+  }
+}
+
+
+
+.view-more {
+  transition: all 0.5s;
+  position: relative;
+  padding: 0.75rem 4rem;
+  width: 20rem;
+  z-index: 1;
+  /* ensure text stays above */
+  color: white;
+}
+
+.view-more::before,
+.view-more::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  z-index: -1;
+  /* keep background behind text */
+}
+
+.view-more::before {
+  color: #EEEEEE;
+  background-color: rgba(162, 123, 92, 1);
+  transition: all 0.3s;
+}
+
+.view-more:hover::before {
+  color: #EEEEEE;
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.view-more::after {
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(162, 123, 92, 1);
+  transform: scale(1.2, 1.2);
+}
+
+.view-more:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.view-more:hover {
+  color: rgba(162, 123, 92, 1);
+
+}
