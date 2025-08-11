@@ -13,9 +13,7 @@ import FindRoom from './pages/FindRoom'
 import RoomsSuits from './pages/RoomsSuits'
 import RoomDetails from './pages/RoomDetails'
 
-import Starters from './pages/Starters'
-import Lunch from './pages/Lunch'
-import Dinner from './pages/Dinner'
+import Dine from './pages/Dine.jsx'
 
 const App = () => {
   return (
@@ -31,9 +29,7 @@ const App = () => {
             <Route path="/roomssuits" element={<RoomsSuits />} />
             <Route path="/roomdetails" element={<RoomDetails />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/starters" element={<Starters />} />
-            <Route path="/lunch" element={<Lunch />} />
-            <Route path="/dinner" element={<Dinner />} />
+            <Route path="/dine" element={<Dine />} />
           </Routes>
         </main>
         <Footer />

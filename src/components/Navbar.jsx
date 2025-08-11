@@ -64,23 +64,10 @@ const Navbar = () => {
                         </NavLink>
                     </ul>
                 </li>
-                <li className="relative group">
-                    <button className="hover:text-[#C29D69] duration-200 cursor-pointer">
-                        Dine ▾
-                    </button>
-
-                    {/* Dropdown */}
-                    <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <NavLink to="/starters">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Starters</li>
-                        </NavLink>
-                        <NavLink to="/lunch">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Lunch</li>
-                        </NavLink>
-                        <NavLink to="/dinner">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Dinner</li>
-                        </NavLink>
-                    </ul>
+                <li>
+                    <NavLink to="/dine" className={linkClass}>
+                        Dine
+                    </NavLink>
                 </li>
                 <li>
                     <NavLink to="/about" className={linkClass}>
