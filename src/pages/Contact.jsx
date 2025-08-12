@@ -68,7 +68,7 @@ const Contact = () => {
             <span className="icon">✉️</span>
             <div>
               <h4>Send Email</h4>
-              <p>example@gmail.com</p>
+              <p>sapphire@gmail.com</p>
             </div>
           </div>
 
