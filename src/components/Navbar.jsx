@@ -77,6 +77,11 @@ const Navbar = () => {
                         Contact
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/login" className={linkClass}>
+                        Login
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )
