@@ -4,24 +4,40 @@
   font-family: 'Agatho Regular';
   src: url('./assets/fonts/agatho/Agatho_Regular.otf') format('truetype')
 }
-
-@font-face {
-  font-family: 'Agatho Bold';
-  src: url('./assets/fonts/agatho/Agatho_Bold.otf') format('truetype')
+/* Use one family name and font-weight variations for each file */
+@font-face{
+  font-family: "Agatho";
+  src: url('./assets/fonts/agatho/Agatho_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  /* only Latin letters + common extended latin ranges — exclude ASCII punctuation like '-' (U+002D) */
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-024F, U+1E00-1EFF;
 }
 
-@font-face {
-  font-family: 'Agatho Medium';
-  src: url('./assets/fonts/agatho/Agatho_Medium.otf') format('truetype')
+@font-face{
+  font-family: "Agatho";
+  src: url('./assets/fonts/agatho/Agatho_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-024F, U+1E00-1EFF;
 }
 
-:root {
+@font-face{
+  font-family: "Agatho";
+  src: url('./assets/fonts/agatho/Agatho_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-024F, U+1E00-1EFF;
+}
 
-  font-family: 'Agatho Regular', sans-serif;
+:root{
+  font-family: "Agatho", "Segoe UI Symbol", Arial, sans-serif;
   letter-spacing: 0.1rem;
 }
 
+
 body {
+  font-family: "Agatho Regular" Arial, sans-serif;
   background-color: #EEEEEE;
 }
 

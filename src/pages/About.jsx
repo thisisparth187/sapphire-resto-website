@@ -64,7 +64,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
-            <span style={{ color: "#c29d69" }}>Home</span> <PiGreaterThanBold fontSize={"0.75rem"} /> About Us
+            <span style={{ color: "#c29d69" }}>Home</span> &gt; About Us
           </motion.p>
         </div>
       </motion.section>

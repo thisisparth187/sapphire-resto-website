@@ -1,12 +1,101 @@
-# React + Vite
+# Folder Structure: sapphire-resto-website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+```
+├── 📁 .git/ 🚫 (auto-hidden)
+├── 📁 node_modules/ 🚫 (auto-hidden)
+├── 📁 public/
+├── 📁 src/
+│   ├── 📁 assets/
+│   │   ├── 📁 agatho/
+│   │   │   ├── 📄 Agatho_ BoldCAPS.otf
+│   │   │   ├── 📄 Agatho_ Light.otf
+│   │   │   ├── 📄 Agatho_ LightCAPS.otf
+│   │   │   ├── 📄 Agatho_ Narrow.otf
+│   │   │   ├── 📄 Agatho_ RegularCAPS.otf
+│   │   │   ├── 📄 Agatho_Bold.otf
+│   │   │   ├── 📄 Agatho_Medium.otf
+│   │   │   └── 📄 Agatho_Regular.otf
+│   │   ├── 📁 fonts/
+│   │   │   ├── 📁 agatho/
+│   │   │   │   ├── 📄 Agatho_ BoldCAPS.otf
+│   │   │   │   ├── 📄 Agatho_ Light.otf
+│   │   │   │   ├── 📄 Agatho_ LightCAPS.otf
+│   │   │   │   ├── 📄 Agatho_ Narrow.otf
+│   │   │   │   ├── 📄 Agatho_ RegularCAPS.otf
+│   │   │   │   ├── 📄 Agatho_Bold.otf
+│   │   │   │   ├── 📄 Agatho_Medium.otf
+│   │   │   │   └── 📄 Agatho_Regular.otf
+│   │   │   └── 📦 agatho.rar
+│   │   └── 📁 images/
+│   │       ├── 📁 facilities/
+│   │       │   ├── 🖼️ gym.png
+│   │       │   ├── 🖼️ pool.png
+│   │       │   ├── 🖼️ resto.png
+│   │       │   └── 🖼️ spa.png
+│   │       ├── 📁 footer-img/
+│   │       │   ├── 🖼️ 1.jpg
+│   │       │   ├── 🖼️ 2.jpg
+│   │       │   ├── 🖼️ 3.jpg
+│   │       │   ├── 🖼️ 4.jpg
+│   │       │   ├── 🖼️ 5.jpg
+│   │       │   ├── 🖼️ 6.jpg
+│   │       │   ├── 🖼️ 7.jpg
+│   │       │   └── 🖼️ 8.jpg
+│   │       ├── 📁 home-page/
+│   │       │   └── 🖼️ image.jpg
+│   │       ├── 📁 team-images/
+│   │       │   ├── 🖼️ Executive Chef.jpg
+│   │       │   ├── 🖼️ Guest Relations Manager.jpg
+│   │       │   ├── 🖼️ Hospitality Manager.jpeg
+│   │       │   └── 🖼️ general-manager.jpg
+│   │       ├── 🖼️ contactbg.png
+│   │       ├── 🖼️ facebookicon.png
+│   │       ├── 🖼️ horizontal-logo.png 🚫 (auto-hidden)
+│   │       ├── 🖼️ instaicon.png
+│   │       ├── 🖼️ linkdinicon.png
+│   │       ├── 🖼️ logo-only-nobg.png
+│   │       ├── 🖼️ logo.png
+│   │       ├── 🖼️ room.webp
+│   │       ├── 🖼️ roombg-darker.png
+│   │       ├── 🖼️ roombg.png
+│   │       ├── 🖼️ table1.jpg
+│   │       ├── 🖼️ table2.jpeg
+│   │       ├── 🖼️ tablebg-darker.png
+│   │       ├── 🖼️ tablebg.png
+│   │       └── 🖼️ xicon.png
+│   ├── 📁 components/
+│   │   ├── 📄 Card.jsx
+│   │   ├── 📄 Facilities.jsx
+│   │   ├── 📄 Footer.jsx
+│   │   ├── 📄 HotelShowcase.jsx
+│   │   ├── 📄 MemberCard.jsx
+│   │   ├── 📄 Navbar.jsx
+│   │   └── 📄 ScrollToTop.jsx
+│   ├── 📁 pages/
+│   │   ├── 📄 About.jsx
+│   │   ├── 📄 Contact.jsx
+│   │   ├── 📄 Dine.jsx
+│   │   ├── 📄 FindRoom.jsx
+│   │   ├── 📄 Home.jsx
+│   │   ├── 📄 RoomDetails.jsx
+│   │   └── 📄 RoomsSuits.jsx
+│   ├── 📁 styles/
+│   │   ├── 🎨 Contact.css
+│   │   ├── 🎨 Facilities.css
+│   │   ├── 🎨 Home.css
+│   │   ├── 🎨 HotelShowcase.css
+│   │   ├── 🎨 MemberCard.css
+│   │   └── 🎨 navbar.css
+│   ├── 🎨 App.css
+│   ├── 📄 App.jsx
+│   ├── 🎨 index.css
+│   └── 📄 main.jsx
+├── 📖 README.md
+├── 📄 eslint.config.js
+├── 🌐 index.html
+├── 📄 package.json
+└── 📄 vite.config.js
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---

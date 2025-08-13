@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/Contact.css";
 import bgImage from '../assets/images/roombg.png';
-import { PiGreaterThanBold } from "react-icons/pi";
 const Contact = () => {
   return (
     <div>
@@ -36,7 +35,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
-            <span style={{ color: "#c29d69" }}>Home</span> <PiGreaterThanBold fontSize={"0.75rem"}/> Contact
+            <span style={{ color: "#c29d69" }}>Home</span> &gt; Contact
           </motion.p>
         </div>
       </motion.section>
