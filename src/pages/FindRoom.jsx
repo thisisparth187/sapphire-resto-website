@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "../styles/FindRoom.module.css";
 import Card from '../components/Card';
+import bgImage from '../assets/images/roombg.png';
 
 export default function FindRoom() {
   const [selectedRoom, setSelectedRoom] = useState(null);
@@ -38,21 +39,39 @@ export default function FindRoom() {
 
   return (
     <div>
-      <div className={styles['hero-img']}>
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}>Find Rooms
-        </motion.h1>
-
-        <motion.p
-          className={styles.breadcrumb}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}>
-          <span className={styles['breadcrumb-home']}>Home</span> &gt; About Us
-        </motion.p>
-      </div>
+      <motion.section
+              style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                padding: "150px 0",
+                textAlign: "center",
+                color: "#fff",
+              }}
+            >
+              <div
+                style={{
+                  padding: "80px 20px",
+                  display: "flex",
+                }}
+                className="flex-col content-center items-center"
+              >
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  style={{ fontSize: "3rem", fontWeight: "bold" }}
+                >
+                  Find Rooms
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
+                  <span style={{ color: "#c29d69" }}>Home</span> &gt; Find Rooms
+                </motion.p>
+              </div>
+            </motion.section>
 
       <div className={styles['findroom-wrapper']}>
 

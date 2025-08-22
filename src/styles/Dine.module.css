@@ -65,11 +65,19 @@
   cursor: pointer;
   font-weight: 500;
   color: #555;
+  transition: all 0.2s ease-in;
+}
+
+.tab:hover {
+  color: #c29d69;
 }
 
 .tab.active {
   font-weight: bold;
-  color: #c68224ff;
+  background: #c68224ff;
+  color: white;
+  padding: 0.25rem 1.5rem;
+  border-radius: 100px;
 }
 
 /* Menu Grid */
