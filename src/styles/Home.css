@@ -15,7 +15,10 @@
   font-size: 4rem;
   color: #eeeeee;
   line-height: 4rem;
+<<<<<<< Updated upstream
   text-shadow: 0px 0px 3px #eeeeee;
+=======
+>>>>>>> Stashed changes
 }
 
 .other {
@@ -24,9 +27,12 @@
 
 .hero-img > p {
   color: #eeeeee;
+<<<<<<< Updated upstream
   text-shadow: 0px 0px 3px #eeeeee;
 }
 
 .other {
   height: 100vh;
+=======
+>>>>>>> Stashed changes
 }
