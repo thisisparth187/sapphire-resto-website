@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "../styles/Dine.css";
+import styles from "../styles/Dine.module.css";
 
 import bgImage from "../assets/images/roombg.png";
 
@@ -157,22 +157,22 @@ const Dine = () => {
 
   // -------- Menu Item Component --------
   const MenuList = ({ items }) => (
-    <div className="menu-grid">
+    <div className={styles['menu-grid']}>
       {items.map((item, idx) => (
         <motion.div
           key={idx}
-          className="menu-card"
+          className={styles['menu-card']}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: idx * 0.05 }}
           whileHover={{ y: -3 }}
         >
-          <img src={item.image} alt={item.name} className="menu-img" />
-          <div className="menu-info">
-            <div className="menu-header">
+          <img src={item.image} alt={item.name} className={styles['menu-img']} />
+          <div className={styles['menu-info']}>
+            <div className={styles['menu-header']}>
               <h4>{item.name}</h4>
-              <div className="dotted-line"></div>
-              <span className="menu-price">₹{item.price}</span>
+              <div className={styles['dotted-line']}></div>
+              <span className={styles['menu-price']}>₹{item.price}</span>
             </div>
             <p>{item.description}</p>
           </div>
@@ -185,33 +185,33 @@ const Dine = () => {
     <div>
       {/* Hero Section */}
       <motion.section
-        className="hero"
+        className={styles.hero}
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <div className="hero-content">
+        <div className={styles['hero-content']}>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             Dine
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="breadcrumb">Home</span> &gt; Dine
+            <span className={styles.breadcrumb}>Home</span> &gt; Dine
           </motion.p>
         </div>
       </motion.section>
 
       {/* VEG CUISINE */}
-      <section className="menu-section">
-        <span className="badge">VEG CUISINE</span>
+      <section className={styles['menu-section']}>
+        <span className={styles.badge}>VEG CUISINE</span>
         <h2>
-          Check Our Tasty <span className="highlight">Veg Cuisine</span>
+          Check Our Tasty <span className={styles.highlight}>Veg Cuisine</span>
         </h2>
 
         {/* Tabs */}
-        <div className="tabs">
+        <div className={styles.tabs}>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategoryVeg(cat)}
-              className={activeCategoryVeg === cat ? "tab active" : "tab"}
+              className={activeCategoryVeg === cat ? `${styles.tab} ${styles.active}` : styles.tab}
             >
               {cat}
             </button>
@@ -222,18 +222,18 @@ const Dine = () => {
       </section>
 
       {/* NON-VEG CUISINE */}
-      <section className="menu-section">
-        <span className="badge">NON-VEG CUISINE</span>
+      <section className={styles['menu-section']}>
+        <span className={styles.badge}>NON-VEG CUISINE</span>
         <h2>
-          Check Our Tasty <span className="highlight">Non-Veg Cuisine</span>
+          Check Our Tasty <span className={styles.highlight}>Non-Veg Cuisine</span>
         </h2>
 
-        <div className="tabs">
+        <div className={styles.tabs}>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategoryNonVeg(cat)}
-              className={activeCategoryNonVeg === cat ? "tab active" : "tab"}
+              className={activeCategoryNonVeg === cat ? `${styles.tab} ${styles.active}` : styles.tab}
             >
               {cat}
             </button>
@@ -244,19 +244,19 @@ const Dine = () => {
       </section>
 
       {/* DESSERTS & DRINKS */}
-      <section className="menu-section">
-        <span className="badge">Sweet Treats & Refreshing</span>
+      <section className={styles['menu-section']}>
+        <span className={styles.badge}>Sweet Treats & Refreshing</span>
         <h2>
           Check Our Tasty{" "}
-          <span className="highlight">Sweet Treats & Refreshing</span>
+          <span className={styles.highlight}>Sweet Treats & Refreshing</span>
         </h2>
 
-        <div className="tabs">
+        <div className={styles.tabs}>
           {drinkCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategoryDrinks(cat)}
-              className={activeCategoryDrinks === cat ? "tab active" : "tab"}
+              className={activeCategoryDrinks === cat ? `${styles.tab} ${styles.active}` : styles.tab}
             >
               {cat}
             </button>

@@ -1,13 +1,13 @@
 import React from 'react';
-import '../styles/MemberCard.css';
+import styles from '../styles/MemberCard.module.css';
 
 const MemberCard = ({ name, image, designation, about }) => {
     return (
-        <div class="card">
-            <img src={image} alt={name} className='card-image' />
-            <div class="category"> {designation} </div>
-            <div class="heading"> {name} 
-                <div class="author"> {about} </div>
+        <div className={styles.card}>
+            <img src={image} alt={name} className={styles['card-image']} />
+            <div className={styles.category}> {designation} </div>
+            <div className={styles.heading}> {name}
+                <div className={styles.author}> {about} </div>
             </div>
         </div>
     );
