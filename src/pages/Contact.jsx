@@ -1,71 +1,109 @@
 import React from "react";
-import "../styles/Contact.css";
-
+import { motion } from "framer-motion";
+import styles from "../styles/Contact.module.css";
+import bgImage from '../assets/images/roombg.png';
 const Contact = () => {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("contactname").value;
-    const email = document.getElementById("contactemail").value;
-    const message = document.getElementById("contactmessage").value;
-
-    try {
-      const res = await fetch("http://127.0.0.1:5000/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const data = await res.json();
-      alert(data.message);
-
-      // Optional: Clear fields after sending
-      if (data.success) {
-        document.getElementById("contactname").value = "";
-        document.getElementById("contactemail").value = "";
-        document.getElementById("contactmessage").value = "";
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again.");
-    }
-  };
-
   return (
-    <div className="scroll-container">
-      <div className="feedback animate-feedback">
-        <div className="message animate-message">
-          <h1 className="message1">Want to get in touch?</h1>
-          Email us right away!
+    <div>
+      
+    <motion.section
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "150px 0",
+          textAlign: "center",
+          color: "#fff",
+        }}
+      >
+        <div
+          style={{
+            padding: "80px 20px",
+            display: "flex",
+          }}
+          className="flex-col content-center items-center"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{ fontSize: "3rem", fontWeight: "bold" }}
+          >
+            Contact
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
+            <span style={{ color: "#c29d69" }}>Home</span> &gt; Contact
+          </motion.p>
         </div>
-        <form className="form animate-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            spellCheck="false"
-            name="ContactName"
-            id="contactname"
-            className="inputbox animate-input input1"
-            placeholder="Enter your name"
-          />
-          <input
-            type="email"
-            spellCheck="false"
-            name="ContactEmail"
-            id="contactemail"
-            className="inputbox animate-input input2"
-            placeholder="Enter your e-mail"
-          />
-          <textarea
-            name="ContactMessage"
-            id="contactmessage"
-            className="inputbox textarea animate-input input3"
-            placeholder="Enter your message here"
-          />
-          <button className="submit-btn animate-input input4">Submit</button>
+      </motion.section>
+      
+     <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} className={`${styles['contact-section']} mx-[10rem] my-[5rem]`}>
+      {/* Left Info Section */}
+      <div className={styles['contact-info']}>
+        <h4 className={styles['contact-subtitle']}>CONTACT US</h4>
+        <h1 className={styles['contact-title']}>CONTACT WITH US</h1>
+        <p className={styles['contact-description']}>
+          Rapidiously myocordinate cross-platform intellectual capital after 
+          the model. Appropriately create interactive infrastructures after 
+          maintenance Holisticly facilitate stand-alone.
+        </p>
+
+        <div className={styles['contact-details']}>
+          <div className={styles['contact-item']}>
+            <span className={styles.icon}>📞</span>
+            <div>
+              <h4>Call Us Now</h4>
+              <p>+980 123 (4567) 890</p>
+            </div>
+          </div>
+
+          <div className={styles['contact-item']}>
+            <span className={styles.icon}>✉️</span>
+            <div>
+              <h4>Send Email</h4>
+              <p>sapphire@gmail.com</p>
+            </div>
+          </div>
+
+          <div className={styles['contact-item']}>
+            <span className={styles.icon}>📍</span>
+            <div>
+              <h4>Our Location</h4>
+              <p>New Elephant Road, Dhanmondi <br /> Dhaka - 1212</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Form Section */}
+      <div className={styles['contact-form']}>
+        <h2>GET IN TOUCH</h2>
+        <form>
+          <div className="textInputWrapper">
+            <input type="text" placeholder="Your Name" className="textInput" />
+          </div>
+          <div className="textInputWrapper">
+            <input type="email" placeholder="Your Email" className="textInput" />
+          </div>
+          <select className={styles['form-input']}>
+            <option>Select Services</option>
+            <option>Booking Inquiry</option>
+            <option>General Support</option>
+            <option>Feedback</option>
+          </select>
+          <div className="textInputWrapper">
+            <textarea placeholder="Message" className={`textInput ${styles.textarea}`}></textarea>
+          </div>
+          <button type="submit" className="btn">SEND MESSAGE</button>
         </form>
       </div>
+    </motion.div>
     </div>
   );
 };
