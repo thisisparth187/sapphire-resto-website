@@ -1,0 +1,25 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 57, 48, 0);
+    justify-content: space-around;
+    transition: background-color 0.4s ease-in-out;
+    z-index: 100;
+}
+
+.navbar.scrolled {
+    background-color: rgba(44, 57, 48, 1);
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items>li:hover {
+    cursor: pointer;
+    color: white;
+}
