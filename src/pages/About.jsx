@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import bgImage from '../assets/images/roombg.png';
 import tableBg from '../assets/images/tablebg.png';
-import { PiGreaterThanBold } from "react-icons/pi";
 
 import imgGeneralManager from "../assets/images/team-images/general-manager.jpg";
 import imgHeadChef from "../assets/images/team-images/Executive Chef.jpg";
@@ -13,7 +12,6 @@ import HotelShowcase from "../components/HotelShowcase.jsx";
 import MemberCard from "../components/MemberCard.jsx";
 
 import { GoPlus } from "react-icons/go";
-import { LuSlash } from "react-icons/lu";
 
 import {
   FaWifi,
