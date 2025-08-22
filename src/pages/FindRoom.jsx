@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
-import "../styles/FindRoom.css";
+import styles from "../styles/FindRoom.module.css";
 import Card from '../components/Card';
 
 export default function FindRoom() {
@@ -38,7 +38,7 @@ export default function FindRoom() {
 
   return (
     <div>
-      <div className="hero-img">
+      <div className={styles['hero-img']}>
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,37 +46,37 @@ export default function FindRoom() {
         </motion.h1>
 
         <motion.p
-          className="breadcrumb"
+          className={styles.breadcrumb}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}>
-          <span className="breadcrumb-home">Home</span> &gt; About Us
+          <span className={styles['breadcrumb-home']}>Home</span> &gt; About Us
         </motion.p>
       </div>
 
-      <div className="findroom-wrapper">
+      <div className={styles['findroom-wrapper']}>
 
-        <div className="findroom-container">
-          <h1 className="findroom-title">Sapphire Hotel — Check Availability</h1>
+        <div className={styles['findroom-container']}>
+          <h1 className={styles['findroom-title']}>Sapphire Hotel — Check Availability</h1>
 
-          <div className="booking-box">
+          <div className={styles['booking-box']}>
 
-            <div className="booking-inputs">
-              <div className="input-group">
+            <div className={styles['booking-inputs']}>
+              <div className={styles['input-group']}>
                 <label htmlFor="checkin">Check-in</label>
                 <input id="checkin" type="date" />
               </div>
-              <div className="input-group">
+              <div className={styles['input-group']}>
                 <label htmlFor="checkout">Check-out</label>
                 <input id="checkout" type="date" />
               </div>
-              <div className="input-group">
+              <div className={styles['input-group']}>
                 <label htmlFor="room-type">Room Type</label>
                 <select id="room-type">
                   {rooms.map(r => <option key={r.name} className='text-gray-950'>{r.name}</option>)}
                 </select>
               </div>
-              <div className="book-btn-wrapper">
+              <div className={styles['book-btn-wrapper']}>
                 <button type="button" onClick={handleCheck}>BOOK NOW</button>
               </div>
             </div>
@@ -84,8 +84,8 @@ export default function FindRoom() {
 
           </div>
 
-          <h2 className="room-details-title">Room Details</h2>
-          <div className="rooms-grid">
+          <h2 className={styles['room-details-title']}>Room Details</h2>
+          <div className={styles['rooms-grid']}>
             {rooms.map(r => {
               const isSelected = selectedRoom === r.name;
               return (

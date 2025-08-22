@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
-import '../styles/navbar.css'
+import styles from '../styles/navbar.module.css'
 import logo from '../assets/images/logo-only-nobg.png'
 const Navbar = () => {
     const [opacity, setOpacity] = useState(0);
@@ -27,12 +27,12 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [location.pathname]);
     const linkClass = ({ isActive }) =>
-        `duration-200 relative ${isActive ? 'active-link text-[#C29D69]' : 'hover:text-[#A27B5C]'}`;
+        `duration-200 relative ${isActive ? `${styles['active-link']} text-[#C29D69]` : 'hover:text-[#A27B5C]'}`;
 
 
     return (
-        <div className="navbar flex" style={{ backgroundColor: `rgba(38, 38, 38,${opacity})` }}>
-            <div className="logo w-20 text-2xl text-white font-bold">
+        <div className={`${styles.navbar} flex`} style={{ backgroundColor: `rgba(38, 38, 38,${opacity})` }}>
+            <div className={`${styles.logo} w-20 text-2xl text-white font-bold`}>
                 <NavLink to="/" className="flex content-center items-center">
                     <img src={logo} alt="logo" className='p-4' />
                     <span>
@@ -40,7 +40,7 @@ const Navbar = () => {
                     </span>
                 </NavLink>
             </div>
-            <ul className="nav-items flex list-none gap-20 text-white font-bold">
+            <ul className={`${styles['nav-items']} flex list-none gap-20 text-white font-bold`}>
                 <li>
                     <NavLink to="/" className={linkClass}>
                         Home

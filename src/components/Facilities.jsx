@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Facilities.css";
+import styles from "../styles/Facilities.module.css";
 import gym from "../assets/images/facilities/gym.png";
 import pool from "../assets/images/facilities/pool.png";
 import resto from "../assets/images/facilities/resto.png";
@@ -42,30 +42,30 @@ const facilitiesData = [
 
 const Facilities = () => {
     return (
-        <section className="facilities-section">
-            <div className="facilities-header">
-                <h2 className="facilities-title">
-                <span className="facilities-subtitle">Facilities</span> <br />
+        <section className={styles['facilities-section']}>
+            <div className={styles['facilities-header']}>
+                <h2 className={styles['facilities-title']}>
+                <span className={styles['facilities-subtitle']}>Facilities</span> <br />
                     Enjoy Complete & <br /> Best Quality Facilities
                 </h2>
-                <button className="view-more">VIEW MORE ITEM</button>
+                <button className={styles['view-more']}>VIEW MORE ITEM</button>
             </div>
 
             {facilitiesData.map((facility, index) => (
                 <div
-                    className={`facility-card ${index % 2 !== 0 ? "reverse-layout" : ""
+                    className={`${styles['facility-card']} ${index % 2 !== 0 ? styles['reverse-layout'] : ""
                         }`}
                     key={facility.id}
                 >
-                    <div className="facility-image">
+                    <div className={styles['facility-image']}>
                         <img src={facility.image} alt={facility.title} />
                     </div>
-                    <div className="facility-content">
-                        <span className="facility-id">{facility.id}</span>
-                        <span className="facility-category">{facility.category}</span>
-                        <h3 className="facility-title">{facility.title}</h3>
-                        <p className="facility-description">{facility.description}</p>
-                        <a href="#" className="facility-link">
+                    <div className={styles['facility-content']}>
+                        <span className={styles['facility-id']}>{facility.id}</span>
+                        <span className={styles['facility-category']}>{facility.category}</span>
+                        <h3 className={styles['facility-title']}>{facility.title}</h3>
+                        <p className={styles['facility-description']}>{facility.description}</p>
+                        <a href="#" className={styles['facility-link']}>
                             →
                         </a>
                     </div>
