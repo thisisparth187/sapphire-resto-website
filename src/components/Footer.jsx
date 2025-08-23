@@ -88,29 +88,30 @@ const Footer = () => {
               marginTop: '10px',
               lineHeight: 1.8,
             }}
+            id='useful-links'
           >
             <li>
-              <a href="#" style={{ color: '#ccc' }}>
+              <a href="/" style={{ color: '#ccc' }}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about" style={{ color: '#ccc' }}>
                 About Hotel
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc' }}>
+              <a href="roomssuits" style={{ color: '#ccc' }}>
                 Rooms & Suites
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc' }}>
-                Reservations
+              <a href="/dine" style={{ color: '#ccc' }}>
+                Dine
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc' }}>
-                News & Blogs
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: '#ccc' }}>
+              <a href="/contact" style={{ color: '#ccc' }}>
                 Contact
               </a>
             </li>

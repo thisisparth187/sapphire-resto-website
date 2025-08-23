@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../styles/RoomDetails.module.css"; // import css file
 import bgImage from "../assets/images/roombg.png";
 import roomImg from "../assets/images/room-details/room.jpg";
 import { FaUserFriends, FaWifi, FaCoffee, FaBed, FaDumbbell, FaCheck } from "react-icons/fa";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import TextField from '@mui/material/TextField';
 
 const RoomDetails = () => {
   return (
@@ -70,28 +73,25 @@ const RoomBooking = () => {
       <div className={styles['booking-form']}>
         <h2>Booking</h2>
         <form>
-          <div className={styles['form-group']}>
-            <label>Check In</label>
-            <DatePicker
-              selected={checkIn}
-              onChange={(date) => setCheckIn(date)}
-              dateFormat="dd-MM-yyyy"
-              placeholderText="enter your check-in date"
-              className={styles['date-input']}
-              todayButton="Today"
-            />
-          </div>
-          <div className={styles['form-group']}>
-            <label>Check Out</label>
-            <DatePicker
-              selected={checkOut}
-              onChange={(date) => setCheckOut(date)}
-              dateFormat="dd-MM-yyyy"
-              placeholderText="enter your check-out date"
-              className={styles['date-input']}
-              todayButton="Today"
-            />
-          </div>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <div className={styles['form-group']}>
+        <label>Check In</label>
+        <DatePicker
+          value={checkIn}
+          onChange={(newValue) => setCheckIn(newValue)}
+          renderInput={(params) => <TextField {...params} fullWidth />}
+        />
+      </div>
+
+      <div className={styles['form-group']}>
+        <label>Check Out</label>
+        <DatePicker
+          value={checkOut}
+          onChange={(newValue) => setCheckOut(newValue)}
+          renderInput={(params) => <TextField {...params} fullWidth />}
+        />
+      </div>
+    </LocalizationProvider>
 
           {/* Adults Counter */}
           <div className={styles['form-group']}>
@@ -115,8 +115,6 @@ const RoomBooking = () => {
         </form>
       </div>
 
-      {/* Scroll to Top Button */}
-      <button className={styles['scroll-top']}>↑</button>
     </div>
   );
 };
