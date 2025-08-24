@@ -51,6 +51,7 @@ const Navbar = () => {
                 {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={`hidden md:flex list-none gap-8 text-white font-bold items-center`}>
+
                 <li>
                     <NavLink to="/" className={linkClass}>
                         Home

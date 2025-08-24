@@ -4,6 +4,8 @@
     left: 0;
     width: 100%;
     background-color: rgba(44, 57, 48, 0);
+
+
     transition: background-color 0.4s ease-in-out;
     z-index: 100;
 }
