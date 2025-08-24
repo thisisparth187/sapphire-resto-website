@@ -88,20 +88,6 @@
   margin-top: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .tabs {
-        flex-wrap: wrap;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .menu-card {
   display: flex;
   align-items: center;

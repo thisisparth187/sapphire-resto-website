@@ -149,17 +149,6 @@
     gap: 30px;
 }
 
-@media screen and (max-width: 768px) {
-    .booking-inputs {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .rooms-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .room-card {
     background: #fafafa;
     color: #333;

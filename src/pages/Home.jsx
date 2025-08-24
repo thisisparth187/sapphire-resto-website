@@ -42,9 +42,7 @@ const Home = () => {
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl"
-          >The Best Luxury Hotels <br /> in PUNE
+            transition={{ duration: 1 }}>The Best Luxury Hotels <br /> in PUNE
           </motion.h1>
 
         </div>
