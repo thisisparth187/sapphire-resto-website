@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from '../styles/navbar.module.css'
 import logo from '../assets/images/logo-only-nobg.png'
+import { FaBars, FaTimes } from 'react-icons/fa';
+
 const Navbar = () => {
     const [opacity, setOpacity] = useState(0);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -26,9 +29,13 @@ const Navbar = () => {
         handleScroll(); // run once initially
         return () => window.removeEventListener("scroll", handleScroll);
     }, [location.pathname]);
+
     const linkClass = ({ isActive }) =>
         `duration-200 relative ${isActive ? `${styles['active-link']} text-[#C29D69]` : 'hover:text-[#A27B5C]'}`;
 
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     return (
         <div className={`${styles.navbar} flex`} style={{ backgroundColor: `rgba(38, 38, 38,${opacity})` }}>
@@ -40,7 +47,10 @@ const Navbar = () => {
                     </span>
                 </NavLink>
             </div>
-            <ul className={`${styles['nav-items']} flex list-none gap-20 text-white font-bold`}>
+            <div className={styles['mobile-menu-icon']} onClick={toggleMobileMenu}>
+                {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            </div>
+            <ul className={`${styles['nav-items']} ${isMobileMenuOpen ? styles['mobile-menu'] : ''} flex list-none gap-20 text-white font-bold`}>
                 <li>
                     <NavLink to="/" className={linkClass}>
                         Home

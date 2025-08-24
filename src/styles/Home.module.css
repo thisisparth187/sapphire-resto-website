@@ -24,3 +24,14 @@
 .hero-img > p {
   color: #eeeeee;
 }
+
+@media screen and (max-width: 768px) {
+  .hero-img {
+    background-size: cover;
+  }
+
+  .hero-img > h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}

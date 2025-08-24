@@ -108,3 +108,19 @@
 .submit-btn:hover {
   background: #8c684d;
 }
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .contact-info {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+}
