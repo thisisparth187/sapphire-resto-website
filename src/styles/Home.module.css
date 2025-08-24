@@ -17,6 +17,13 @@
   line-height: 4rem;
 }
 
+@media screen and (max-width: 768px) {
+  .hero-img {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .other {
   padding: 3rem;
 }
