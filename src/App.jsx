@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import ScrollToTop from './components/ScrollToTop';
 
 import Navbar from './components/Navbar'
@@ -18,7 +19,7 @@ import Dine from './pages/Dine.jsx'
 const App = () => {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div>
         <Navbar />
         <main>
