@@ -63,15 +63,15 @@ const Navbar = () => {
                     </button>
 
                     {/* Dropdown */}
-                    <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-0 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <ul className="rounded-md cursor-pointer absolute left-0 top-full mt-3 w-48 bg-[#EEEEEE] text-[#1E1E1E] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
                         <NavLink to="/findroom">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Find Rooms</li>
+                            <li className="px-4 py-2 hover:bg-[#A27B5C] cursor-pointer font-normal rounded-md m-2 hover:text-gray-100 duration-200">Find Rooms</li>
                         </NavLink>
                         <NavLink to="/roomssuits">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Rooms & Suites</li>
+                            <li className="px-4 py-2 hover:bg-[#A27B5C] cursor-pointer font-normal rounded-md m-2 hover:text-gray-100 duration-200">Rooms & Suites</li>
                         </NavLink>
                         <NavLink to="/roomdetails">
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-normal rounded-md m-2 hover:text-[#A27B5C] duration-200">Room Details</li>
+                            <li className="px-4 py-2 hover:bg-[#A27B5C] cursor-pointer font-normal rounded-md m-2 hover:text-gray-100 duration-200">Room Details</li>
                         </NavLink>
                     </ul>
                 </li>
@@ -91,23 +91,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
             </ul>
-            {/* Mobile Dropdown Menu */}
-            {isMobileMenuOpen && (
-                <div className={styles.mobileMenu}>
-                    <NavLink to="/" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
-                    <details>
-                        <summary className="cursor-pointer py-2 font-bold hover:text-[#C29D69]">Rooms</summary>
-                        <ul className="flex flex-col gap-2 pl-4">
-                            <NavLink to="/findroom" onClick={() => setIsMobileMenuOpen(false)}><li>Find Rooms</li></NavLink>
-                            <NavLink to="/roomssuits" onClick={() => setIsMobileMenuOpen(false)}><li>Rooms & Suites</li></NavLink>
-                            <NavLink to="/roomdetails" onClick={() => setIsMobileMenuOpen(false)}><li>Room Details</li></NavLink>
-                        </ul>
-                    </details>
-                    <NavLink to="/dine" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Dine</NavLink>
-                    <NavLink to="/about" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>About</NavLink>
-                    <NavLink to="/contact" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
-                </div>
-            )}
+
         </div>
     )
 }
