@@ -6,12 +6,73 @@
   <link rel="icon" type="image/svg+xml" href="/sapphire-resto-website/assets/logo-only-nobg-CsYKFrO2.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sapphire</title>
-  <script type="module" crossorigin src="/sapphire-resto-website/assets/index-BesnbIRM.js"></script>
-  <link rel="stylesheet" crossorigin href="/sapphire-resto-website/assets/index-B21VBlm_.css">
+  <script type="module" crossorigin src="/sapphire-resto-website/assets/index-BPBreYmg.js"></script>
+  <link rel="stylesheet" crossorigin href="/sapphire-resto-website/assets/index-jh7qgCdH.css">
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"></div>
+  <!-- Custom Cursor -->
+  <style>
+    .cursor-dot,
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: #CBA37E;
+      border-radius: 50%;
+
+    }
+
+    .cursor-ring {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #CBA37E;
+      border-radius: 50%;
+
+    }
+  </style>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <script>
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorRing = document.querySelector(".cursor-ring");
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      // subtract half dot size (4px) to center it
+      cursorDot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+    });
+
+    function animate() {
+      // smooth trailing effect for ring
+      ringX += (mouseX - ringX) * 0.1;
+      ringY += (mouseY - ringY) * 0.1;
+
+      // subtract half ring size (20px) to center it
+      cursorRing.style.transform = `translate(${ringX - 20}px, ${ringY - 20}px)`;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+
   <script>
     const redirect = sessionStorage.getItem('redirect');
     if (redirect) {
