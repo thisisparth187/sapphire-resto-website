@@ -18,7 +18,7 @@ import Dine from './pages/Dine.jsx'
 
 const App = () => {
   return (
-    <Router basename="/sapphire-resto-website">
+    <Router>
       <ScrollToTop />
       <div>
         <Navbar />
