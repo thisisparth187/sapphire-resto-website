@@ -5,6 +5,8 @@ import styles from "../styles/FindRoom.module.css";
 import Card from '../components/Card';
 import bgImage from '../assets/images/roombg.png';
 
+
+
 export default function FindRoom() {
   const [selectedRoom, setSelectedRoom] = useState(null);
 
@@ -24,54 +26,103 @@ export default function FindRoom() {
     }
     alert(`Room: ${roomType}\nCheck-in: ${checkin}\nCheck-out: ${checkout}`);
   };
+  const base = import.meta.env.BASE_URL;
 
-  const rooms = [
-    { name: 'Deluxe Room', price: '₹3,500', desc: 'Spacious, modern design, AC, free Wi-Fi.', img: 'src/assets/images/find-room-img/dulex_room.jpg' },
-    { name: 'Super Deluxe Room', price: '₹4,800', desc: 'Luxury decor, balcony, minibar.', img: 'src/assets/images/find-room-img/super-deluxe-room.jpg' },
-    { name: 'Executive Suite', price: '₹7,200', desc: 'Private lounge, king-size bed.', img: 'src/assets/images/find-room-img/executive-suite-room.jpg' },
-    { name: 'Presidential Suite', price: '₹15,000', desc: 'Private pool & butler service.', img: 'src/assets/images/find-room-img/presidential-suite.jpg' },
-    { name: 'Family Room', price: '₹6,000', desc: 'Extra beds, kitchenette.', img: 'src/assets/images/find-room-img/family-room.jpg' },
-    { name: 'Honeymoon Suite', price: '₹9,000', desc: 'Jacuzzi, romantic package.', img: 'src/assets/images/find-room-img/honeymoon-suite.jpg' },
-    { name: 'Standard Room', price: '₹2,800', desc: 'Comfortable, budget-friendly.', img: 'src/assets/images/find-room-img/standard-room.jpg' },
-    { name: 'Luxury Room', price: '₹8,500', desc: 'High-end bedding, spa access.', img: 'src/assets/images/find-room-img/luxury-room.jpg' },
-    { name: 'Sea View Room', price: '₹9,500', desc: 'Balcony & breakfast.', img: 'src/assets/images/find-room-img/sea-view-room.jpg' },
-  ];
+const rooms = [
+  {
+    name: "Deluxe Room",
+    price: "₹3,500",
+    desc: "Spacious, modern design, AC, free Wi-Fi.",
+    img: `${base}find-room-img/dulex_room.jpg`,
+  },
+  {
+    name: "Super Deluxe Room",
+    price: "₹4,800",
+    desc: "Luxury decor, balcony, minibar.",
+    img: `${base}find-room-img/super-deluxe-room.jpg`,
+  },
+  {
+    name: "Executive Suite",
+    price: "₹7,200",
+    desc: "Private lounge, king-size bed.",
+    img: `${base}find-room-img/executive-suite-room.jpg`,
+  },
+  {
+    name: "Presidential Suite",
+    price: "₹15,000",
+    desc: "Private pool & butler service.",
+    img: `${base}find-room-img/presidential-suite.jpg`,
+  },
+  {
+    name: "Family Room",
+    price: "₹6,000",
+    desc: "Extra beds, kitchenette.",
+    img: `${base}find-room-img/family-room.jpg`,
+  },
+  {
+    name: "Honeymoon Suite",
+    price: "₹9,000",
+    desc: "Jacuzzi, romantic package.",
+    img: `${base}find-room-img/honeymoon-suite.jpg`,
+  },
+  {
+    name: "Standard Room",
+    price: "₹2,800",
+    desc: "Comfortable, budget-friendly.",
+    img: `${base}find-room-img/standard-room.jpg`,
+  },
+  {
+    name: "Luxury Room",
+    price: "₹8,500",
+    desc: "High-end bedding, spa access.",
+    img: `${base}find-room-img/luxury-room.jpg`,
+  },
+  {
+    name: "Sea View Room",
+    price: "₹9,500",
+    desc: "Balcony & breakfast.",
+    img: `${base}find-room-img/sea-view-room.jpg`,
+  },
+];
+
+
+
 
   return (
     <div>
       <motion.section
-              style={{
-                backgroundImage: `url(${bgImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                padding: "150px 0",
-                textAlign: "center",
-                color: "#fff",
-              }}
-            >
-              <div
-                style={{
-                  padding: "80px 20px",
-                  display: "flex",
-                }}
-                className="flex-col content-center items-center"
-              >
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  style={{ fontSize: "3rem", fontWeight: "bold" }}
-                >
-                  Find Rooms
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
-                  <span style={{ color: "#c29d69" }}>Home</span> &gt; Find Rooms
-                </motion.p>
-              </div>
-            </motion.section>
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "150px 0",
+          textAlign: "center",
+          color: "#fff",
+        }}
+      >
+        <div
+          style={{
+            padding: "80px 20px",
+            display: "flex",
+          }}
+          className="flex-col content-center items-center"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{ fontSize: "3rem", fontWeight: "bold" }}
+          >
+            Find Rooms
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} style={{ fontSize: "1.1rem" }} className="flex items-center gap-2">
+            <span style={{ color: "#c29d69" }}>Home</span> &gt; Find Rooms
+          </motion.p>
+        </div>
+      </motion.section>
 
       <div className={styles['findroom-wrapper']}>
 
