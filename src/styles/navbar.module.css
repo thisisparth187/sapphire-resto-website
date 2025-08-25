@@ -3,10 +3,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(44, 57, 48, 0);
     justify-content: space-around;
     transition: background-color 0.4s ease-in-out;
     z-index: 100;
+    padding: 0.5rem 1rem;
 }
 
 .navbar.scrolled {
@@ -19,7 +19,26 @@
     align-items: center;
 }
 
-.nav-items>li:hover {
+.nav-items > li:hover {
     cursor: pointer;
     color: white;
+}
+
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .nav-items {
+    display: none; /* hide normal nav */
+  }
+  .hamburger {
+    display: block; /* show hamburger */
+  }
 }

@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from '../styles/navbar.module.css'
 import logo from '../assets/images/logo-only-nobg.png'
+import { FaBars, FaTimes } from 'react-icons/fa';
 const Navbar = () => {
     const [opacity, setOpacity] = useState(0);
     const location = useLocation();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,6 +42,15 @@ const Navbar = () => {
                     </span>
                 </NavLink>
             </div>
+
+            <div
+                className={`${styles.hamburger}`}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+                {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            </div>
+
+
             <ul className={`${styles['nav-items']} flex list-none gap-20 text-white font-bold`}>
                 <li>
                     <NavLink to="/" className={linkClass}>
@@ -80,6 +91,23 @@ const Navbar = () => {
                     </NavLink>
                 </li>
             </ul>
+            {/* Mobile Dropdown Menu */}
+            {isMobileMenuOpen && (
+                <div className={styles.mobileMenu}>
+                    <NavLink to="/" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
+                    <details>
+                        <summary className="cursor-pointer py-2 font-bold hover:text-[#C29D69]">Rooms</summary>
+                        <ul className="flex flex-col gap-2 pl-4">
+                            <NavLink to="/findroom" onClick={() => setIsMobileMenuOpen(false)}><li>Find Rooms</li></NavLink>
+                            <NavLink to="/roomssuits" onClick={() => setIsMobileMenuOpen(false)}><li>Rooms & Suites</li></NavLink>
+                            <NavLink to="/roomdetails" onClick={() => setIsMobileMenuOpen(false)}><li>Room Details</li></NavLink>
+                        </ul>
+                    </details>
+                    <NavLink to="/dine" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Dine</NavLink>
+                    <NavLink to="/about" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>About</NavLink>
+                    <NavLink to="/contact" className={linkClass} onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
+                </div>
+            )}
         </div>
     )
 }
