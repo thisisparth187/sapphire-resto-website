@@ -264,9 +264,9 @@ http://localhost:3000
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshot
 
-*(Images to be added soon)*
+![Screenshot](src/assets/image.png)
 
 
 ---
