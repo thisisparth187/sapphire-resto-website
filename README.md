@@ -101,8 +101,6 @@ http://localhost:3000
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
-├── test/
-│   └── test.html
 ├── .gitignore
 ├── README.md
 ├── eslint.config.js
