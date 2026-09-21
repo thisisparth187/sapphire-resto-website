@@ -16,27 +16,28 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
-    const res = await fetch("https://sapphire-resto-website.onrender.com/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
 
     try {
-      // simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const res = await fetch("https://sapphire-resto-website.onrender.com/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-      setPopup({ type: "success", message: "Your booking request was sent!\nCheck Email for further information." });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setPopup({ type: "success", message: "Your booking request was sent!\nCheck Email for further information." });
+        setForm({ name: "", email: "", service: "", message: "" });
+      } else {
+        setPopup({ type: "error", message: data.message || "Something went wrong, try again." });
+      }
     } catch (err) {
-      setPopup({ type: "error", message: "Something went wrong, try again." });
+      setPopup({ type: "error", message: "Failed to connect to backend server. Please try again later." });
     } finally {
       setLoading(false);
     }
-
   };
 
   return (
